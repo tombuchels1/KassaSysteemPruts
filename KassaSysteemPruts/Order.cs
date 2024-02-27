@@ -25,7 +25,7 @@ namespace KassaSysteemPruts
         public float CalculateTotalPrice()
         {
             float totalPrice = 0;
-            foreach (var product in Products)
+            foreach (Product product in Products)
             {
                 totalPrice += product.Price;
             }
@@ -33,10 +33,5 @@ namespace KassaSysteemPruts
         }
 
 
-        // Convert het object naar string zodat het te printen is
-        public override string ToString()
-        {
-            return $"OrderID: {OrderId}, Totale prijs: {CalculateTotalPrice()}";
-        }
     }
 }
