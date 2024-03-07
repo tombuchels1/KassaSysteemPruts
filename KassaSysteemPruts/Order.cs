@@ -4,11 +4,12 @@ using System.Collections.Generic;
 namespace KassaSysteemPruts
 {
     public class Order
-    {
-        public int OrderId { get; }
-        private List<Product> Products { get; }
 
-        DateTime OrderDate { get; }
+    {
+        public int OrderId { get; set; }
+        private List<Product> Products { get; set; }
+        public Customer Customer  { get; set; }
+        public Employee Employee { get; set; }
 
         public Order(int orderId)
         {
@@ -22,14 +23,36 @@ namespace KassaSysteemPruts
         }
 
         // Functie om totaal prijs uit te rekenen
-        public float CalculateTotalPrice()
+        public decimal CalculateTotalPrice()
         {
-            float totalPrice = 0;
+            decimal totalPrice = 0;
             foreach (Product product in Products)
             {
                 totalPrice += product.Price;
             }
             return totalPrice;
+        }
+
+        // Functie om bon te genereren
+        public void GenerateBon()
+        {
+            // directory om op te slaan
+            string directoryPath = @"C:\Users\tombu\source\repos\KassaSysteemPruts";
+
+            // Voeg samen DirectoryPath en Filename
+            string filePath = Path.Combine(directoryPath, "Bonnetje.txt");
+
+            // Schrijf producten naar file
+            using (StreamWriter sw = new StreamWriter(filePath))
+            {
+                foreach (Product product in Products)
+                {
+                    sw.WriteLine($"ProductID: {product.ProductId}, Naam: {product.ProductName}, Prijs: {product.Price}, Beschrijving: {product.ProductDescription}");
+                }
+
+                // Voeg de totale prijs toe aan het bestand
+                sw.WriteLine($"OrderID: {OrderId}, Totale prijs: {CalculateTotalPrice()} euro");
+            }
         }
 
 

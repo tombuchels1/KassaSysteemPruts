@@ -10,12 +10,12 @@ namespace KassaSysteemPruts
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public float Price { get; set; }
+        public decimal Price { get; set; }
         public string ProductDescription { get; set; }
 
 
         // Constructor
-        public Product(int productid, string name, float price, string productdescription)
+        public Product(int productid, string name, decimal price, string productdescription)
         {
             ProductId = productid;
             ProductName = name;
