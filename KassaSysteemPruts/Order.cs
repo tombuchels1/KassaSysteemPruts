@@ -37,7 +37,7 @@ namespace KassaSysteemPruts
         public void GenerateBon()
         {
             // directory om op te slaan
-            string directoryPath = @"C:\Users\tombu\source\repos\KassaSysteemPruts";
+            string directoryPath = @"C:\Users\tombu\source\repos\KassaSysteemPrutsUpdated";
 
             // Voeg samen DirectoryPath en Filename
             string filePath = Path.Combine(directoryPath, "Bonnetje.txt");
@@ -52,6 +52,8 @@ namespace KassaSysteemPruts
 
                 // Voeg de totale prijs toe aan het bestand
                 sw.WriteLine($"OrderID: {OrderId}, Totale prijs: {CalculateTotalPrice()} euro");
+                sw.WriteLine($"Datum en Tijd: {DateTime.Now}");
+
             }
         }
 

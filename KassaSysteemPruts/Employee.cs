@@ -10,8 +10,10 @@ namespace KassaSysteemPruts
     {
         public int EmployeeId {  get; set; }
         public decimal Salary { get; set; }
+        public List<Employee> Employees { get; set; }
 
-        public Employee(string name, int phonenumber, int employeeid, decimal salary) : base(name, phonenumber)
+        public Employee(string name, int phonenumber, int employeeid, decimal salary) 
+            : base(name, phonenumber)
         {
             EmployeeId = employeeid;
             Salary = salary;

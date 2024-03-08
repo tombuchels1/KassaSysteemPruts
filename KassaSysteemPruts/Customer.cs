@@ -9,10 +9,11 @@ namespace KassaSysteemPruts
     public class Customer : Person
     {
         public int CustomerId { get; set; }
-
+        
 
         // Constructor
-        public Customer(string name, int phonenumber, int customerid) : base(name, phonenumber)
+        public Customer(string name, int phonenumber, int customerid) 
+            : base(name, phonenumber)
         {
             CustomerId = customerid;
         }
