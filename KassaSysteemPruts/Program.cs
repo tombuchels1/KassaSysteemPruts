@@ -177,7 +177,7 @@ namespace KassaSysteemPruts
                         Employee newEmployee = new Employee(employeeName, employeePhoneNumber, employeeId, employeeSalary);
                         employees.Add(newEmployee);
 
-                        // Ask if the user wants to add another customer
+                        // Ask if the user wants to add another customers
                         Console.WriteLine("Do you want to add another customer? (y/n)");
                         string answer = Console.ReadLine();
 
