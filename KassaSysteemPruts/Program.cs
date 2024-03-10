@@ -7,9 +7,9 @@ namespace KassaSysteemPruts
     {
         static void Main(string[] args)
         {
-            // Menu
+            //StartProgram: niet beste oplossing
             Console.WriteLine("Welkom bij het kassasysteem");
-            Console.WriteLine("Toets 1 voor order en toets, 2 voor het adminpaneel, 3 om te stoppen en klik op enter (1)(2)(3)");
+            Console.WriteLine("Toets 1 voor order te maken, toets 2 voor het adminpaneel en 3 om te stoppen. (1)(2)(3)");
             int menuChoice = int.Parse(Console.ReadLine());
 
             if (menuChoice == 1)
@@ -120,28 +120,29 @@ namespace KassaSysteemPruts
 
                     while (createAnotherCustomer)
                     {
-                        // Adding a Customer
+                        // Add customer
                         Console.WriteLine("Enter Name:");
                         string customerName = Console.ReadLine();
 
                         Console.WriteLine("Enter telefoonnummer:");
                         int customerPhoneNumber = int.Parse(Console.ReadLine());
 
-                        // Update customerID
+                        // Update customerID met +1
                         int customerID = currentCustomerId++;
 
-                        // Create and add the customer to the list
+                        // Create de customer en voeg toe aan de list
                         Customer newCustomer = new Customer(customerName, customerPhoneNumber, customerID);
                         customers.Add(newCustomer);
 
-                        // Ask if the user wants to add another customer
-                        Console.WriteLine("Do you want to add another customer? (y/n)");
+                        // Vraag of er nog een customer toegevoegd moet worden.
+                        Console.WriteLine("Wil je nog een customer toevoegen (y/n)");
                         string answer = Console.ReadLine();
 
-                        // If the answer is not "y", exit the loop
+                        // Als antworod niet y is stop.
                         if (answer != "y")
                         {
                             createAnotherCustomer = false;
+                           
                         }
                     }
                     // Print de list van customers
@@ -160,7 +161,7 @@ namespace KassaSysteemPruts
 
                     while (createAnotherEmployee)
                     {
-                        // Adding a Employee
+                        // Add een employee
                         Console.WriteLine("Enter Name:");
                         string employeeName = Console.ReadLine();
 
@@ -170,28 +171,33 @@ namespace KassaSysteemPruts
                         Console.WriteLine("Enter nieuw salaris");
                         int employeeSalary = int.Parse(Console.ReadLine());
 
-                        // Update customerID
+                        // Update employeeID met +1 voor elke iteratie.
                         int employeeId = currentEmployeeId++;
 
-                        // Create and add the customer to the list
+                        // Create de employee en voeg hem toe aan de lijst
                         Employee newEmployee = new Employee(employeeName, employeePhoneNumber, employeeId, employeeSalary);
                         employees.Add(newEmployee);
 
-                        // Ask if the user wants to add another customers
-                        Console.WriteLine("Do you want to add another customer? (y/n)");
+                        // Vraag of de gebruiker nog een employee wil toevoegen
+                        Console.WriteLine("Wil je nog een employee toevoegen? (y/n)");
                         string answer = Console.ReadLine();
 
-                        // If the answer is not "y", exit the loop
+                        // Als antworod niet y is stop.
                         if (answer != "y")
                         {
-                            createAnotherEmployee = false;
+                            
+                            createAnotherEmployee = false;                     
+
                         }
+                        foreach (Employee employee in employees)
+                        {
+                            Console.WriteLine($"Employee ID: {employee.EmployeeId}, Name: {employee.Name}, Phone Number: {employee.Phonenumber}, Salary, {employee.Salary}");
+                        }
+
                     }
 
                 }
-
-
-                Console.ReadLine(); ;
+          
             }
 
             if (menuChoice == 3)

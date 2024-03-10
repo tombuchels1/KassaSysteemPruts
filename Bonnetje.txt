@@ -1,3 +1,3 @@
-ProductID: 1, Naam: 1, Prijs: 1, Beschrijving: 1
-OrderID: 1, Totale prijs: 1 euro
-Datum en Tijd: 08/03/2024 10:45:02
+ProductID: 1, Naam: Test3, Prijs: 3,32, Beschrijving: tes
+OrderID: 2, Totale prijs: 3,32 euro
+Datum en Tijd: 09/03/2024 13:53:48

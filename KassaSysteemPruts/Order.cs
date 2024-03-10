@@ -37,7 +37,7 @@ namespace KassaSysteemPruts
         public void GenerateBon()
         {
             // directory om op te slaan
-            string directoryPath = @"C:\Users\tombu\source\repos\KassaSysteemPrutsUpdated";
+            string directoryPath = @"C:\Users\vaals\source\repos\KassaSysteemPruts";
 
             // Voeg samen DirectoryPath en Filename
             string filePath = Path.Combine(directoryPath, "Bonnetje.txt");
